@@ -1,0 +1,28 @@
+#include <iostream>
+#include <math.h>
+#include <limits.h>
+using namespace std;
+int main() {
+	int n;
+	cout<<"enter length of array: ";
+	cin >> n;
+	int arr[n];
+	int maax = INT_MIN;
+	int miin = INT_MAX;
+	for(int i=0; i<n; i++){
+	    cin >> arr[i];
+	    if(arr[i]< miin){
+	        miin = min(arr[i], arr[i-1]);
+	    }
+	}
+	for(int i=0; i<n; i++){
+	    if(arr[i]> maax){
+	        maax = max(arr[i], arr[i+1]);
+	    }
+	}
+
+	cout << maax << endl;
+	cout << miin << endl;
+
+	return 0;
+}
